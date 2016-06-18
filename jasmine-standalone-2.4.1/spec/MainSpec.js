@@ -1,5 +1,5 @@
 describe("d3 dashboard", function () {
-  var sut, result;
+  let sut, result;
 
   beforeEach(function () {
     sut = app;
@@ -19,19 +19,16 @@ describe("d3 dashboard", function () {
   });
 
   describe("d3 namespace must be defined, this way we know the library is included", function () {
-    it("testing d3 integration",function(){
+    it("testing d3 integration",function () {
       result = d3;
       expect(result).toBeDefined();
     });
   });
 
-  describe("MVC defintions test", function () {
-    it("Model is a class defined through ES2015 standards", function () {
-      result = app;
-      console.log(result);
-    });
+  it("test for comma separated values", function () {
+    result = app.controller.addCommas(2000000);
+    expect(result).toBe("2.000.000");
   });
-
 
   afterEach(function () {
   });
