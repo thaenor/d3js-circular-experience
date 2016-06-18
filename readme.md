@@ -7,8 +7,10 @@ the structure is as follows:
 * jasmine folder will contain a copy of the code within jasmine testing system
 ** the copy within jasmine doesn't use require js due to compatibility issues
 ** to run the tests simply open SpecRunner.html (or start a simple http server from it)
+** live version: [link](https://thaenor.github.io/d3js-circular-experience/jasmine-standalone-2.4.1/SpecRunner.html)
 * project is the bare bones source code
 ** to run the project simply open index.html or start a simple http server.
+** [live version](https://thaenor.github.io/d3js-circular-experience/project)
 
 A simple http server is required (even though there is no server side code) because some browsers
 block the usage of ajax requests on the file system. This would cause the json file to fail to load.
