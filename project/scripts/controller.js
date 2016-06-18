@@ -59,27 +59,27 @@ app.controller.getNumbers = function(){
 
 app.controller.getRevenueDetails = function(){
   return [
-    /*{index:1, value: */app.model.revenue._smartphonePercentage,
-    /*{index:2, value: */app.controller.addCommas(app.model.revenue._smartphone),
-    /*{index:3, value: */app.model.revenue._tabletPercentage,
-    /*{index:4, value: */app.controller.addCommas(app.model.revenue._tablet)
+    app.model.revenue._smartphonePercentage,
+    app.controller.addCommas(app.model.revenue._smartphone),
+    app.model.revenue._tabletPercentage,
+    app.controller.addCommas(app.model.revenue._tablet)
   ];
 }
 
 app.controller.getImpressionsDetails = function(){
   return [
-    /*{index:5, value: */app.model.impressions._smartphonePercentage,
-    /*{index:6, value: */app.controller.addCommas(app.model.impressions._smartphone),
-    /*{index:7, value: */app.model.impressions._tabletPercentage,
-    /*{index:8, value: */app.controller.addCommas(app.model.impressions._tablet)
+    app.model.impressions._smartphonePercentage,
+    app.controller.addCommas(app.model.impressions._smartphone),
+    app.model.impressions._tabletPercentage,
+    app.controller.addCommas(app.model.impressions._tablet)
   ];
 }
 
 app.controller.getVisitsDetails = function(){
   return [
-    /*{index:9, value: */app.model.visits._smartphonePercentage,
-    /*{index:10, value:*/app.controller.addCommas(app.model.visits._smartphone),
-    /*{index:11, value:*/app.model.visits._tabletPercentage,
-    /*{index:12, value:*/app.controller.addCommas(app.model.visits._tablet)
+    app.model.visits._smartphonePercentage,
+    app.controller.addCommas(app.model.visits._smartphone),
+    app.model.visits._tabletPercentage,
+    app.controller.addCommas(app.model.visits._tablet)
   ];
 }
