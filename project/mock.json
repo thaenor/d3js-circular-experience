@@ -1,0 +1,28 @@
+{
+  "mockObject": {
+    "revenue": {
+      "name": "REVENUE",
+      "number": 200000,
+      "tablet": 120000,
+      "tabletPercentage": 60,
+      "smartphone": 80000,
+      "smartphonePercentage": 40
+    },
+    "impressions": {
+      "name": "IMPRESSIONS",
+      "number": 50000000,
+      "tablet": 20000000,
+      "tabletPercentage": 40,
+      "smartphone": 30000000,
+      "smartphonePercentage": 60
+    },
+    "visits": {
+      "name": "VISITS",
+      "number": 600000000,
+      "tablet": 480000000,
+      "tabletPercentage": 80,
+      "smartphone": 120000000,
+      "smartphonePercentage": 20
+    }
+  }
+}
