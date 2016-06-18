@@ -99,19 +99,6 @@ app.view.renderLine = function(pathinfo,color){
   return line;
 };
 
-//helper function to add comma separators to numbers
-function addCommas(nStr) {
-    nStr += '';
-    x = nStr.split('.');
-    x1 = x[0];
-    x2 = x.length > 1 ? '.' + x[1] : '';
-    var rgx = /(\d+)(\d{3})/;
-    while (rgx.test(x1)) {
-            x1 = x1.replace(rgx, '$1' + '.' + '$2');
-    }
-    return x1 + x2;
-}
-
 /******************************************************************************/
 //main render function
 app.view.render = function(revenue, impressions, visits) {
@@ -127,14 +114,14 @@ app.view.render = function(revenue, impressions, visits) {
   let xcoord = 250, ycoord = 250; //center of the first circle
   let colorArray = [app.view.constants.green, app.view.constants.blue, app.view.constants.yellow];
 
-  //rendering the 3 circles
+  //rendering the 3 circles this is commented because I later found out how to draw arcs which is similar to the initial design
   //for(let i=0; i<3; i++){
   //  circleList[i] = app.view.renderCircle(xcoord,ycoord,colorArray[i]);
   //  xcoord += 330;
   //}
 
   //rendering the number in the center of the circle
-  let centerTextArr = [addCommas(revenue._number+"€"), addCommas(impressions._number), addCommas(visits._number)];
+  let centerTextArr = app.controller.getNumbers();
   let centerText = [];
   xcoord = 200; ycoord = 270;
   //this for loop drew the labels correctly but with some offset because of the size of the content
@@ -168,11 +155,11 @@ app.view.render = function(revenue, impressions, visits) {
   subLabels[5].attr("fill","rgb(190,90,23)");
 
   //adddind details beneath the arcs,tablet and smartphone percentages
-  let data = [revenue._smartphonePercentage, addCommas(revenue._smartphone), revenue._tabletPercentage, addCommas(revenue._tablet)];
+  let data = app.controller.getRevenueDetails();
   app.view.renderDetails(260,data);
-  data = [impressions._smartphonePercentage, addCommas(impressions._smartphone), impressions._tabletPercentage, addCommas(impressions._tablet)];
+  data = app.controller.getImpressionsDetails();
   app.view.renderDetails(240+340,data);
-  data = [visits._smartphonePercentage, addCommas(visits._smartphone), visits._tabletPercentage, addCommas(visits._tablet)];
+  data = app.controller.getVisitsDetails();
   app.view.renderDetails(240+340+340,data);
 
   let pathinfo = [
